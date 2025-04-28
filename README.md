@@ -22,7 +22,8 @@ ifood_case/
 ├── src/                                 
 │   ├── __init__.py  
 │   ├── data_preprocessing.py            
-│   ├── historical_data_viz.py           
+│   ├── historical_data_viz.py  
+│   ├── impact_evaluate.py          
 │   ├── model_evaluate.py                
 │   └── model_train.py                   
 │  
@@ -95,5 +96,6 @@ The project is divided into two main steps, each handled by a separate notebook:
 | `historical_data_viz.py`  | Generates visualizations to explore customer behavior, offer success, and transaction history. |
 | `model_evaluate.py`       | Evaluates model predictions with detailed metrics and visualizations (classification report, confusion matrix, ROC curve). |
 | `model_train.py`          | Trains and tunes LightGBM models using a full pipeline (preprocessing + model). |
+| `impact_evaluate.py`      | Calculation reference for model's impact, to be used for informational purposes only. |
 
 
