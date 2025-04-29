@@ -18,6 +18,16 @@ Final outputs include:
 ## Project Structure
 
 ifood-case/  
+├── data/  
+│   ├── raw/                             
+│   │   ├── profile.json  
+│   │   ├── transactions.json  
+│   │   └── offers.json  
+│   │  
+│   └── processed/                       
+│       ├── df_model.parquet  
+│       └── df_all.parquet 
+|
 ├── notebooks/  
 │   ├── 1_data_preprocessing.ipynb      
 │   └── 2_modeling.ipynb                 
@@ -34,17 +44,6 @@ ifood-case/
 │   ├── model_evaluate.py                
 │   └── model_train.py                   
 │  
-├── data/  
-│   ├── raw/                             
-│   │   ├── profile.json  
-│   │   ├── transactions.json  
-│   │   └── offers.json  
-│   │  
-│   └── processed/                       
-│       ├── df_model.parquet  
-│       └── df_all.parquet  
-│  
-├── __init__.py  
 ├── .gitignore                           
 ├── setup.py                             
 ├── requirements.txt                     
