@@ -52,6 +52,7 @@ class ModelTrainer:
         return pipeline
 
     def __tune_model(self, pipeline, X_train, y_train):
+        # Best parameters local traning: {'model__num_leaves': 65, 'model__n_estimators': 100, 'model__max_depth': 3, 'model__learning_rate': 0.1}
         param_dist = {
             'model__num_leaves': randint(20, 100),
             'model__max_depth': randint(3, 10),

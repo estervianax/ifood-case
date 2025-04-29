@@ -1,6 +1,6 @@
 import pandas as pd
 import matplotlib.pyplot as plt
-from sklearn.metrics import classification_report, confusion_matrix, roc_curve, auc
+from sklearn.metrics import classification_report, confusion_matrix, auc
 import seaborn as sns
 import numpy as np
 
@@ -19,10 +19,9 @@ class ModelEvaluator:
         print(self.__analyse_conversion_rate())
         self.__plot_feature_importance()
         self.__plot_confusion_matrix()
-        self.__plot_roc_curve()
 
     def __plot_confusion_matrix(self):
-        cm = confusion_matrix(self.y_test, self.y_pred)
+        cm = confusion_matrix(self.y_test, self.y_pred, labels=[0,1])
         cm_percent = cm / cm.sum() * 100
 
         labels = np.array([f"{v}\n({p:.1f}%)" for v, p in zip(cm.flatten(), cm_percent.flatten())])
@@ -67,21 +66,3 @@ class ModelEvaluator:
         else:
             conclusion = (f"The model reduced the conversion rate by {abs(impact):.1f}% compared to the actual base.")  
         return conclusion
-
-
-    def __plot_roc_curve(self):
-
-        y_pred_proba = self.y_pred_proba[:,1] 
-
-        fpr, tpr, thresholds = roc_curve(self.y_test, y_pred_proba)
-        roc_auc = auc(fpr, tpr)
-
-        plt.figure(figsize=(8,6))
-        plt.plot(fpr, tpr, color='#f44f39', lw=2, label=f'ROC Curve (AUC = {roc_auc:.2f})')
-        plt.plot([0, 1], [0, 1], color='#fcaf93', linestyle='--') 
-        plt.xlabel('False Positive Rate')
-        plt.ylabel('True Positive Rate')
-        plt.title('ROC Curve')
-        plt.legend(loc="lower right")
-        plt.grid()
-        plt.show()

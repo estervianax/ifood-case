@@ -10,7 +10,6 @@ class HistoricalDataVisualizer:
     def plot_historical_data(self):
         self.__plot_client_statistics(self.df_proceed)
         self.__plot_transactions_vs_credit_limit(self.df_proceed)
-        self.__plot_offer_conversions(self.df_proceed)
         self.__plot_analyze_offer_status(self.df_proceed)
         self.__plot_target_balance(self.df_model)
 
@@ -55,23 +54,6 @@ class HistoricalDataVisualizer:
         plt.title('Number of Transactions vs. Credit Card Limit')
         plt.xlabel('Credit Card Limit')
         plt.ylabel('Number of Transactions')
-        plt.show()
-
-    def __plot_offer_conversions(self,df_proceed):
-        df_offer_completed = df_proceed[df_proceed['event'] == 'offer completed']
-        conversions_per_offer = df_offer_completed.groupby('offer_id').agg(
-            total_conversions=('account_id', 'count')
-        ).reset_index()
-
-        conversions_per_offer = conversions_per_offer.sort_values(by='total_conversions', ascending=False)
-
-        plt.figure(figsize=(10, 6))
-        plt.bar(conversions_per_offer['offer_id'].astype(str), conversions_per_offer['total_conversions'], color='#fc8161')
-        plt.title('Conversions per Offer')
-        plt.xlabel('Offer ID')
-        plt.ylabel('Total Conversions')
-        plt.xticks(rotation=90)
-        plt.tight_layout()
         plt.show()
 
     def __plot_analyze_offer_status(self,df_proceed):
@@ -129,9 +111,11 @@ class HistoricalDataVisualizer:
                             xytext = (0, 5),
                             textcoords = 'offset points')
 
-        plt.title('Number of Offers by Type', fontsize=16)
-        plt.xlabel('Offer Type', fontsize=12)
+        plt.title('Distribution of Completed vs. Not Completed Offers', fontsize=16)
+        plt.xlabel('Offer Completed?', fontsize=12)
         plt.ylabel('Quantity', fontsize=12)
         plt.xticks(rotation=45) 
         plt.tight_layout()  
         plt.show()
+
+

@@ -1,14 +1,19 @@
-# iFood Case Study 🛵🍔
+# Targeted Tastes, an iFood Case Study 🛵🍔
 
-## Overview
-This project focuses on analyzing offer data and predicting customer conversions using machine learning techniques.  
-It involves **preprocessing raw data**, **exploring historical trends**, and **building predictive models** to optimize business outcomes.  
+This project delivers actionable insights into customer behavior and offer effectiveness by identifying the best offer to send to each customer, aiming to maximize conversion rates through data-driven strategies.
 
-By leveraging **Apache Spark** for large-scale data processing and **Scikit-learn** for model training, the project delivers key insights into **customer behavior**, **offer performance**, and **conversion rates**.  
+It preprocesses raw data and explores historical trends to create a unified dataset that combines information about offers, transactions, and customer profiles.  
+This enables the development of a predictive model capable of estimating the probability that a given customer will complete an offer they receive.
+
+Key technologies used include:
+- **Apache Spark** for large-scale data processing.
+- **LightGBM** for building machine learning model.
+- **Scikit-learn** for additional model evaluation and utilities.
+
 Final outputs include:
-- A unified, clean dataset.
-- Visualizations for analysis and reporting.
-- A trained model ready for deployment.  
+- A clean, structured dataset ready for modeling.
+- Visualizations to support analysis and reporting.
+- A trained model prepared for deployment.
 
 ## Project Structure
 
@@ -84,7 +89,7 @@ The project is divided into two main steps, each handled by a separate notebook:
 - **Description**:
   - Train and evaluate machine learning models (LightGBM).
   - Perform hyperparameter tuning using `RandomizedSearchCV`.
-  - Visualize feature importance, confusion matrix, ROC curves, and assess model performance.
+  - Visualize feature importance, confusion matrix, and assess model performance.
 
 ---
 
@@ -94,7 +99,7 @@ The project is divided into two main steps, each handled by a separate notebook:
 |---------------------------|-------------|
 | `data_preprocessing.py`   | Cleans, filters, and merges data from the raw sources to create a model-ready dataset. |
 | `historical_data_viz.py`  | Generates visualizations to explore customer behavior, offer success, and transaction history. |
-| `model_evaluate.py`       | Evaluates model predictions with detailed metrics and visualizations (classification report, confusion matrix, ROC curve). |
+| `model_evaluate.py`       | Evaluates model predictions with detailed metrics and visualizations (classification report, confusion matrix). |
 | `model_train.py`          | Trains and tunes LightGBM models using a full pipeline (preprocessing + model). |
 | `impact_evaluate.py`      | Calculation reference for model's impact, to be used for informational purposes only. |
 
