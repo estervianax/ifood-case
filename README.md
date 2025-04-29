@@ -22,9 +22,9 @@ ifood-case/
 │   ├── 1_data_preprocessing.ipynb      
 │   └── 2_modeling.ipynb                 
 │  
-├── presentation/
-│   ├── ifood_case.pdf          
-│   └── ifood_case.pptx                   
+├── presentation/  
+│   ├── ifood_case.pdf            
+│   └── ifood_case.pptx                     
 │  
 ├── src/                                 
 │   ├── __init__.py  
