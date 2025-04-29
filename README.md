@@ -26,8 +26,8 @@ ifood-case/
 │   │  
 │   └── processed/                       
 │       ├── df_model.parquet  
-│       └── df_all.parquet 
-|
+│       └── df_all.parquet   
+│  
 ├── notebooks/  
 │   ├── 1_data_preprocessing.ipynb      
 │   └── 2_modeling.ipynb                 
