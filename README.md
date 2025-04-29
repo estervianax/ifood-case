@@ -17,12 +17,14 @@ Final outputs include:
 
 ## Project Structure
 
-ifood_case/  
+ifood-case/  
 ├── notebooks/  
 │   ├── 1_data_preprocessing.ipynb      
 │   └── 2_modeling.ipynb                 
 │  
-├── presentation/                        
+├── presentation/
+│   ├── ifood_case.pdf          
+│   └── ifood_case.pptx                   
 │  
 ├── src/                                 
 │   ├── __init__.py  
@@ -52,8 +54,8 @@ ifood_case/
 
 1. Clone repository:
     ```bash
-    git clone https://github.com/yourusername/poultryhealthpredict.git
-    cd poultryhealthpredict
+    git clone https://github.com/YOUR-USERNAME/ifood-case.git
+    cd ifood-case
     ```
 
 2. Create virtual environment and activate it:
